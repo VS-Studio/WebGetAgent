@@ -1,7 +1,7 @@
 ### 说明
 ====
 
-WebGetAgent是爬虫系统与WEB网站之间的一个代理服务，获取爬虫系统的请求后代理服务会缓存页面数据并将请求插入到队列，后台服务会从队列中获取请求将爬取后的数据保存到数据库中，爬虫下次爬取的时可以获取更新后的数据。详细说明请移步：http://doc.ucweb.local/pages/viewpage.action?pageId=22686525
+WebGetAgent是爬虫系统与WEB网站之间的一个代理服务，获取爬虫系统的请求后代理服务会缓存页面数据并将请求插入到队列，后台服务会从队列中获取请求将爬取后的数据保存到数据库中，爬虫下次爬取的时可以获取更新后的数据。
 
 
 ### 依赖库
@@ -28,14 +28,14 @@ javac -classpath ./lib/*:. -sourcepath src -d bin -encoding utf-8 -Xlint:uncheck
 
 #proxy 
 port = 8989 代理端口
-host = 10.1.85.198 代理地址
+host = 127.0.0.1 代理地址
 log_level = 0 错误日志级别 0：debug 1: info 2: warn 3: error
-#mysql 10.1.72.154
-dbhost = 10.1.72.154 数据库地址
+#mysql 127.0.0.1
+dbhost = 127.0.0.1 数据库地址
 dbport = 3306 数据库端口
 dbuser = root 数据库账号
 dbpass = root 数据库密码
-dbase = liujf_db 数据库
+dbase = test 数据库
 #mq
 mq_port = 8988 队列端口
 mq_thread_num = 5 队列线程数
@@ -55,7 +55,7 @@ nohup java -classpath ./lib/*:./bin:. network.WebGetAgent >nohup.out 2>&1 &
 ### Webkit内核渲染
 ====
 
-下载安装 Phantomjs 配置到环境变量，将需要进行webkit渲染的请求增加参数： webgetagent_with=ajax，如： http://video.ucweb.com/?webgetagent_with=ajax
+下载安装 Phantomjs 配置到环境变量，将需要进行webkit渲染的请求增加参数： webgetagent_with=ajax，如： http://www.xxx.com/?webgetagent_with=ajax
 
 
 
